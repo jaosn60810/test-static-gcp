@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,5 +16,12 @@ export default function Home() {
     fetchUser();
   }, []);
 
-  return <div className="">{JSON.stringify(user)}</div>;
+  return (
+    <div className="">
+      <div className=""> {JSON.stringify(user)}</div>
+      <Link href="/about" className="text-blue-500">
+        about
+      </Link>
+    </div>
+  );
 }
